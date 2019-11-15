@@ -39,11 +39,11 @@ class Map2DTest {
         try {
             map.put("X", null, 3.14);
             failBecauseExceptionWasNotThrown(NullPointerException.class);
-        } finally {}
+        } catch(NullPointerException e) {} finally {}
         try {
             map.put(null, 17, 3.14);
             failBecauseExceptionWasNotThrown(NullPointerException.class);
-        } finally {}
+        } catch(NullPointerException e) {} finally {}
 
     }
 
