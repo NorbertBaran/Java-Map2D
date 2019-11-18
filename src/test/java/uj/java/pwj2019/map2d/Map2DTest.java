@@ -120,8 +120,8 @@ class Map2DTest {
         assertThat(result1).size().isEqualTo(2);
         assertThat(result2).size().isEqualTo(2);
         assertThat(result1.get(rowKeyA)).isEqualTo(valA1);
-        assertThat(result1.get(rowKeyA)).isEqualTo(valA2);
-        assertThat(result2.get(rowKeyB)).isEqualTo(valB1);
+        assertThat(result2.get(rowKeyA)).isEqualTo(valA2);
+        assertThat(result1.get(rowKeyB)).isEqualTo(valB1);
         assertThat(result2.get(rowKeyB)).isEqualTo(valB2);
     }
 
@@ -215,7 +215,7 @@ class Map2DTest {
 
         assertThat(toFill).size().isEqualTo(2);
         assertThat(toFill.get(rowKeyA)).isEqualTo(valA1);
-        assertThat(toFill.get(rowKeyB)).isEqualTo(valA2);
+        assertThat(toFill.get(rowKeyB)).isEqualTo(valB1);
 
         map.fillMapFromColumn(toFill, 3);
         assertThat(toFill).size().isEqualTo(2);
@@ -278,9 +278,9 @@ class Map2DTest {
         assertTrue(target.hasRow("b"));
         assertFalse(target.hasRow("A"));
         assertFalse(target.hasRow("B"));
-        assertTrue(target.hasColumn(2L));
+        assertTrue(target.hasColumn(1L));
         assertTrue(target.hasColumn(4L));
-        assertFalse(target.hasColumn(1L));
+        assertFalse(target.hasColumn(2L));
     }
 
     private static Long multiply(Integer x) {
