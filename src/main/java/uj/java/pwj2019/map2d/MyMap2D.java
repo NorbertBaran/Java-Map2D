@@ -119,11 +119,11 @@ public class MyMap2D<R, C, V> implements Map2D<R, C, V> {
         Map2D columnMap=Map2D.createInstance();
         Set<Map.Entry<R, Map<C, V>>> map2dSet=map2D.entrySet();
         for(Map.Entry<R, Map<C, V>> iMap: map2dSet){
-            Object rowKey=iMap.getKey();
+            R rowKey=iMap.getKey();
             Set<Map.Entry<C, V>> mapSet=iMap.getValue().entrySet();
             for(Map.Entry<C, V> element: mapSet){
-                Object columnKey=element.getKey();
-                Object value=element.getValue();
+                C columnKey=element.getKey();
+                V value=element.getValue();
 
                 columnMap.put(columnKey, rowKey, value);
             }
